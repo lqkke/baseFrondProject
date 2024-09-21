@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<link lang="en">
+<link>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>PROJECT</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+        <div id="app"></div>
+        <header class="header">
+            <!-- Ваш код -->
+            <div class="container">
+                <div class="logo">
+                        <img src="./images/header_vectors/Vector.png" alt="">
+                        <img src="./images/header_vectors/N.png" alt="">
+                        <img src="./images/header_vectors/O.png" alt="">
+                        <img src="./images/header_vectors/T.png" alt="">
+                        <img src="./images/header_vectors/E.png" alt="">
+                        <img src="./images/header_vectors/S.png" alt="">
+                </div>
+                <div class="notes-count">
+                    <img src="images/header_vectors/note-count.png" alt="">
+                    <span class="notes-count-span"></span>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <form class="note-form" name="notes">
+                    <label for="notes-title">Название заметки</label>
+                        <textarea id="notes-title"  class="title" placeholder="Напишите название новой заметки..."></textarea>
+                    <label for="notes-description">Описание новой заметки</label>
+                        <textarea id="notes-description" class="description" placeholder="Напишите описание новой заметки..."></textarea>
+                        <fieldset class="fieldset">
+                            <legend class="label">Выберите цвет заметки</legend>
+                            <ul class="radio-list">
+                            <li>
+                                <input checked class="radio" type="radio" name="color" value="yellow" aria-label="yellow" />
+                            </li>
+                            <li>
+                                <input class="radio" type="radio" name="color" value="red" aria-label="red" />
+                            </li>
+                            <li>
+                                <input class="radio" type="radio" name="color" value="green" aria-label="green" />
+                            </li>
+                            <li>
+                                <input class="radio" type="radio" name="color" value="blue" aria-label="blue" />
+                            </li>
+                            <li>
+                                <input class="radio" type="radio" name="color" value="purple" aria-label="purple" />
+                            </li>
+                            </ul>
+                        </fieldset>
+                    <button class="button" type="submit"><img src="images/icons/addNote.png"> Добавить заметку</button>
+                </form>
+            </div>
+            <div class="filter-box">
+                <!-- Ваш код -->
+            </div>
+            <ul class="notes-list">
+                <!-- Сюда будут рендерится заметки из JavaScript -->
+            </ul>
+
+            <div class="messages-box">
+            <!-- Сюда будут рендерится информационные сообщения из JavaScript -->
+            </div>
+        </main>
+        
+    <script src="js/main.js"></script>
+</body>
+</html>
