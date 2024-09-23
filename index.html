@@ -31,31 +31,39 @@
         <main>
             <div class="container">
                 <form class="note-form" name="notes">
-                    <label for="notes-title">Название заметки</label>
-                        <textarea id="notes-title"  class="title" placeholder="Напишите название новой заметки..."></textarea>
-                    <label for="notes-description">Описание новой заметки</label>
-                        <textarea id="notes-description" class="description" placeholder="Напишите описание новой заметки..."></textarea>
-                        <fieldset class="fieldset">
-                            <legend class="label">Выберите цвет заметки</legend>
-                            <ul class="radio-list">
-                            <li>
-                                <input checked class="radio" type="radio" name="color" value="yellow" aria-label="yellow" />
-                            </li>
-                            <li>
-                                <input class="radio" type="radio" name="color" value="red" aria-label="red" />
-                            </li>
-                            <li>
-                                <input class="radio" type="radio" name="color" value="green" aria-label="green" />
-                            </li>
-                            <li>
-                                <input class="radio" type="radio" name="color" value="blue" aria-label="blue" />
-                            </li>
-                            <li>
-                                <input class="radio" type="radio" name="color" value="purple" aria-label="purple" />
-                            </li>
-                            </ul>
-                        </fieldset>
-                    <button class="button" type="submit"><img src="images/icons/addNote.png"> Добавить заметку</button>
+                    <div class="title-wrapper">
+                        <label for="notes-title">Название заметки</label>
+                            <textarea id="notes-title"  class="title" placeholder="Напишите название новой заметки..."></textarea>
+                    </div>
+                    <div class="section-wrapper">  
+                        <div class="description-wrapper">
+                            <label for="notes-description">Описание новой заметки</label>
+                            <textarea id="notes-description" class="description" placeholder="Напишите описание новой заметки..."></textarea>
+                        </div>
+                        <div class="colorNbutton">
+                            <fieldset class="fieldset">
+                                <legend class="label">Выберите цвет заметки</legend>
+                                <ul class="radio-list">
+                                <li>
+                                    <input checked class="radio" type="radio" name="color" value="yellow" aria-label="yellow" />
+                                </li>
+                                <li>
+                                    <input class="radio" type="radio" name="color" value="red" aria-label="red" />
+                                </li>
+                                <li>
+                                    <input class="radio" type="radio" name="color" value="green" aria-label="green" />
+                                </li>
+                                <li>
+                                    <input class="radio" type="radio" name="color" value="blue" aria-label="blue" />
+                                </li>
+                                <li>
+                                    <input class="radio" type="radio" name="color" value="purple" aria-label="purple" />
+                                </li>
+                                </ul>
+                            </fieldset>
+                            <button class="button" type="submit"><img src="images/icons/addNote.svg"> Добавить заметку</button>
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="filter-box">

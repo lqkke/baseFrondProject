@@ -11,10 +11,10 @@ const MOCK_NOTES = [
 
 const model = {
   notes: [],
-  addNotes(title,description) {
+  addNotes(title,description, color) {
     const id = Math.random()
     const isFavorite = false
-    const newNote = {id, title, description, isFavorite}
+    const newNote = {id, title, description, color, isFavorite}
     this.notes.unshift(newNote)
     view.renderNotes(this.notes)
   },
@@ -52,21 +52,25 @@ const view = {
     const form = document.querySelector('.note-form')
     const inputTitle = document.querySelector('.title')
     const inputDescription = document.querySelector('.description')
+    const radioButtons = document.querySelectorAll('.radio')
+
 
     form.addEventListener('submit', function(event) {
       event.preventDefault()
       const title = inputTitle.value
       const description = inputDescription.value
+      const selectedRadio = [...radioButtons].find(radio => radio.checked)
+      const color = selectedRadio.value
       //controller.addNotes(title, description)
       if(title.trim() !== '' && description.trim() !== '') {
-        controller.addNotes(title, description)
+        controller.addNotes(title, description, color)
         inputTitle.value = ''
         inputDescription.value = ''
         view.displayMessage(`Заметка добавлена!`)
         } else if(title.length > 50) {
           view.displayMessage(`Максимальная длина заголовка - 50 символов`, true)
         } else {
-          view.displayMessage(`Заполните все поля`,true)
+          view.displayMessage(`Заполните все поля`, true)
         }
       
       //inputTitle.value = ''
@@ -111,9 +115,13 @@ const view = {
       const favoriteImg = note.isFavorite ? "images/icons/heart-active.png" : "images/icons/heart-inactive.png";
       notesHTML += `
       <li id="${note.id}" class="note">
-          <b class="note-title">${note.title}</b>
-          <button class="favorite-button" type="button"><img src="${favoriteImg}" alt="Избранное"></button>
-          <button class="delete-button" type="button"><img src="images/icons/trash.png" alt="Удалить"></button>
+          <div class="title-container ${note.color}">
+            <b class="note-title">${note.title}</b>
+            <div>
+            <button class="favorite-button" type="button"><img src="${favoriteImg}" alt="Избранное"></button>
+            <button class="delete-button" type="button"><img src="images/icons/trash.png" alt="Удалить"></button>
+            </div>
+          </div>
           <p class="note-description">${note.description}</p>
         </li>
       `
@@ -127,11 +135,14 @@ const view = {
     const messagesBox = document.querySelector('.messages-box')
 
     if(notes.length !== 0) {
-      filterBox.innerHTML = `<input type="checkbox" id="checkbox"><label for="checkbox">Показать только избранные заметки</label>`
+      filterBox.innerHTML = `<div class="checkbox-container">
+                              <input type="checkbox" id="checkbox">
+                              <label for="checkbox">Показать только избранные заметки</label>
+                              </div>`
       messagesBox.innerHTML = ``
     } else {
       filterBox.innerHTML = ``
-      messagesBox.innerHTML = `<span>У вас ещё нет ни одной заметки. Заполните поля выше и создайте свою первую заметку!</span>`
+      messagesBox.innerHTML = `<span class="add-notes-span"><br>У вас ещё нет ни одной заметки.<br>Заполните поля выше и создайте свою первую заметку!</br></b></span>`
     }
 
     if(checkbox) {
@@ -140,9 +151,9 @@ const view = {
 
     const notesCounter = notes.length
     if (notesCounter === 0) {
-      counter.textContent = `У вас ещё нет ни одной заметки. Заполните поля выше и создайте свою первую заметку!`;
+      counter.textContent = `У вас ещё нет ни одной заметки.`;
     } else {
-      counter.textContent = `всего заметок: ${notesCounter}`;
+      counter.innerHTML = `Всего заметок: <b>${notesCounter}</b>`;
     }
   },
 
@@ -163,6 +174,7 @@ const view = {
       messagesBox.classList.remove('error')
       messagesBox.classList.add('success')
       setTimeout(() => {
+        messagesBox.classList.remove('success')
         messagesBox.innerHTML = ''
       }, 3000)
     }
@@ -174,8 +186,8 @@ const view = {
 }
 
 const controller = {
-  addNotes(title, description) {
-    model.addNotes(title, description)
+  addNotes(title, description, color) {
+    model.addNotes(title, description, color)
   },
 
   toggleFavorite(noteId) {

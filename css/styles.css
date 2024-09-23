@@ -16,10 +16,429 @@ body {
     padding: 0 64px;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid red;
 }
 
 
 .header {
     height: 60px;
+    box-shadow: 0px 1px 3px 0px rgba(11, 12, 13, 0.16),0px 0px 1px 0px rgba(11, 12, 13, 0.24);
+    background: rgb(255, 255, 255);
+    margin-bottom: 24px;
 }
+
+.header .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.note-form {
+    /* Автолейаут */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 24px;
+    margin-bottom: 24px;
+    border-radius: 4px;
+    box-shadow: 0px 8px 12px 0px rgba(11, 12, 13, 0.08),0px 16px 24px 0px rgba(11, 12, 13, 0.04),0px 1px 2px 0px rgba(11, 12, 13, 0.08);
+    background: rgb(255, 255, 255)
+
+}
+
+label {
+    color: rgb(145, 145, 145);
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.title, .description {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.title::placeholder, .description::placeholder {
+    color: rgb(145, 145, 145);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+
+.title-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.title {
+        /* Frame 10 */
+    resize: none;
+    min-width: 344px;
+    width: auto;
+    height: 40px;
+    /* Автолейаут */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 12px 6px 12px;
+    box-sizing: border-box;
+    border: 1px solid rgb(232, 232, 232);
+    border-radius: 10px;
+    overflow: hidden; /* Скрываем скролл */
+    white-space: nowrap;
+    margin-bottom: 12px;
+}
+
+.section-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.description-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 24px;
+}
+
+.description {
+    resize: none;
+    width: 100%;
+    min-height: 84px;
+    height: 100%;
+    /* Автолейаут */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10;
+    padding: 6px 12px 6px 12px;
+    box-sizing: border-box;
+    border: 1px solid rgb(232, 232, 232);
+    border-radius: 10px;
+}
+
+.colorNbutton {
+    display: flex;
+    flex-direction: column;
+}
+
+.colorNbutton .button {
+    border-radius: 10px;
+    border-color: transparent;
+    background: rgb(69, 124, 220);
+    position: static;
+    min-width: 232px;
+    height: 36px;
+    /* Автолейаут */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8;
+    padding: 6px 24px 6px 24px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 12px 0px;
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.colorNbutton .button img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    filter: invert(100%) grayscale(100%);
+}
+
+
+.notes-count {
+    display: flex;
+    align-items: center;
+}
+
+.notes-count img {
+    padding-right: 12px;
+}
+
+.notes-count-span {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: right;
+}
+
+fieldset {
+    all: unset;
+}
+
+legend {
+    all: unset
+}
+
+.radio-list {
+    display: flex;
+    gap: 14px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.label {
+    color: rgb(145, 145, 145);
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+
+.radio {
+    appearance: none;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: green;
+}
+
+.radio[value="red"] {
+    background-color: #F37D7D;
+}
+
+.radio[value="green"] {
+    background-color: #C2F37D;
+}
+
+.radio[value="blue"] {
+    background-color: #7DE1F3;
+}
+
+.radio[value="yellow"] {
+    background-color: #F3DB7D;
+}
+
+.radio[value="purple"] {
+    background-color: #E77DF3;
+}
+
+.radio:checked {
+    border-color: white;
+    box-shadow: 0 0 0 3px white, /* Внутренняя обводка для создания промежутка */
+    0 0 0 4.5px #007BFF; /* Внешняя обводка */
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 64px;
+    align-items: center;
+}
+
+.checkbox-container input {
+    display: none;
+}
+
+.checkbox-container label {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    margin-left: 10px;
+}
+
+
+.checkbox-container img {
+    width: 12px;
+    height: 12px;
+}
+
+
+.favorite-button, .delete-button {
+    border: none;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+}
+
+.notes-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+.note {
+    list-style: none;
+    width: 368px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 24px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px 0px rgba(11, 12, 13, 0.08),0px 8px 16px 0px rgba(11, 12, 13, 0.04),0px 1px 2px 0px rgba(11, 12, 13, 0.08);
+}
+
+.title-container {
+    height: 48px;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.note-description {
+    display: flex;
+    width: 100%;
+    overflow-wrap: break-word;
+    flex-grow: 1;
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+    padding: 12px;
+}
+
+.favorite-button, .delete-button {
+    width: 16px; /* Устанавливаем ширину кнопки */
+    height: 16px; /* Устанавливаем высоту кнопки */
+    padding: 0; /* Убираем отступы внутри кнопки */
+    border: none; /* Убираем границу кнопки */
+    background: none; /* Убираем фон кнопки */
+    cursor: pointer; /* Делаем кнопку кликабельной */
+}
+
+.favorite-button img, .delete-button img {
+    width: 100%; /* Устанавливаем ширину изображения на 100% от кнопки */
+    height: 100%; /* Устанавливаем высоту изображения на 100% от кнопки */
+    object-fit: contain; /* Подгоняем изображение под размер кнопки */
+}
+.title-container.yellow {
+    background-color: #F3DB7D;;
+    color: rgb(41, 37, 21);
+}
+
+.title-container.red {
+    background-color: #F37D7D;
+    color: rgb(61, 24, 24);
+}
+
+.title-container.green {
+    background-color: #C2F37D;
+    color: rgb(61, 77, 39);
+}
+
+.title-container.blue {
+    background-color: #7DE1F3;
+    color: rgb(31, 57, 61);
+}
+
+.title-container.purple {
+    background-color: #E77DF3;
+    color: rgb(58, 31, 61);
+}
+
+.add-notes-span {
+    color: rgb(0, 0, 0);
+    height: 50vh;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.messages-box.error, .messages-box.success {
+    position: fixed;
+    bottom: 72px;
+    right: 64px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 12px 0px rgba(11, 12, 13, 0.08),0px 16px 24px 0px rgba(11, 12, 13, 0.04),0px 1px 2px 0px rgba(11, 12, 13, 0.08);
+    padding: 12px 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition-duration: 1s;
+}
+
+.messages-box.error {
+    background: rgb(242, 61, 91);
+}
+
+.messages-box.success {
+    background: rgb(71, 178, 125);
+}
+
+.messages-box.error span, .messages-box.success  span {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+    margin-left: 10px;
+}
+
+
+.messages-box img {
+    width: 20px;
+    height: 20px;
+    filter: invert(100%) grayscale(100%);
+}
+
+
+
+
